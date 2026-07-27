@@ -30,6 +30,22 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        left-shift {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <15 16>;
+            require-prior-idle-ms = <150>;
+        };
+
+        right-shift {
+            bindings = <&kp RSHIFT>;
+            key-positions = <19 20>;
+            require-prior-idle-ms = <150>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
