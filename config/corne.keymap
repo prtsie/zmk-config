@@ -37,22 +37,26 @@
             bindings = <&kp LEFT_SHIFT>;
             key-positions = <15 16>;
             require-prior-idle-ms = <150>;
+            layers = <0 1 2>;
         };
 
         right-shift {
             bindings = <&kp RSHIFT>;
             key-positions = <19 20>;
             require-prior-idle-ms = <150>;
+            layers = <0 1 2>;
         };
 
         symbols-right {
             bindings = <&mo 5>;
             key-positions = <21 20>;
+            layers = <0>;
         };
 
         symbols-left {
             bindings = <&mo 5>;
             key-positions = <15 14>;
+            layers = <0>;
         };
     };
 
