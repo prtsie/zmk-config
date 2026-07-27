@@ -112,7 +112,7 @@
             bindings = <
 &trans  &trans        &trans      &trans         &trans        &trans           &trans         &trans        &trans         &kp LBKT      &kp RBKT      &trans
 &trans  &kp LS(EXCL)  &kp LS(AT)  &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)    &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)  &kp LS(RPAR)  &trans
-&trans  &trans        &kp BSLH    &kp APOS       &kp LS(PLUS)  &kp MINUS        &kp EQUAL      &kp GRAVE     &kp LS(TILDE)  &kp LS(LBRC)  &kp LS(RBRC)  &trans
+&trans  &trans        &kp BSLH    &kp APOS       &kp MINUS     &kp LS(PLUS)     &kp EQUAL      &kp GRAVE     &kp LS(TILDE)  &kp LS(LBRC)  &kp LS(RBRC)  &trans
                                   &trans         &trans        &trans           &trans         &trans        &trans
             >;
         };
