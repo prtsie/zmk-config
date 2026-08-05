@@ -13,32 +13,7 @@
         // Home row mod для ЛЕВОЙ руки: срабатывает как модификатор только
         // если параллельно нажата клавиша ПРАВОЙ руки (positional hold-tap).
         // Это убирает случайные срабатывания при быстром наборе одной рукой.
-
-        hml: home_row_mod_left {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <170>;
-            quick-tap-ms = <175>;
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
-
-            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
-            hold-trigger-on-release;
-        };
-
         // Зеркальный home row mod для ПРАВОЙ руки.
-
-        hmr: home_row_mod_right {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <170>;
-            quick-tap-ms = <175>;
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
-
-            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
-            hold-trigger-on-release;
-        };
     };
 
     macros {
@@ -52,6 +27,36 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&rgb_ug RGB_EFF &to 0>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        left-shift {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <15 14>;
+            require-prior-idle-ms = <150>;
+            layers = <0 1 2>;
+        };
+
+        right-shift {
+            bindings = <&kp RSHIFT>;
+            key-positions = <20 21>;
+            require-prior-idle-ms = <150>;
+            layers = <0 1 2>;
+        };
+
+        symbols-right {
+            bindings = <&mo 5>;
+            key-positions = <20 19>;
+            layers = <0>;
+        };
+
+        symbols-left {
+            bindings = <&mo 5>;
+            key-positions = <15 16>;
+            layers = <0>;
         };
     };
 
@@ -100,6 +105,15 @@
 &trans  &kp N6     &kp N7  &kp N8  &kp N9  &kp N0    &none   &none   &none  &none  &none  &none
 &trans  &kp PSCRN  &none   &none   &kp F5  &kp F9    &none   &none   &none  &none  &none  &none
                            &none   &trans  &trans    &none   &trans  &none
+            >;
+        };
+
+        symbol_layer {
+            bindings = <
+&none  &none         &none       &none          &none         &none            &none          &none         &none          &none         &none         &none
+&none  &kp LS(EXCL)  &kp LS(AT)  &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)    &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)  &kp LS(RPAR)  &none
+&none  &none         &none       &kp LS(PLUS)   &kp MINUS     &none            &none          &kp EQUAL     &kp LS(TILDE)  &kp LS(LBRC)  &kp LS(RBRC)  &none
+                                 &none          &none         &none            &none          &none         &none
             >;
         };
     };
